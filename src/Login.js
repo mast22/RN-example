@@ -11,7 +11,6 @@ import AppState from '../App';
 function Login({ navigation }) {
   if (AppState.token != null) {
     alert('Вы уже вошли');
-    console.log(AppState.token);
     navigation.navigate('Home');
   }
 

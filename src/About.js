@@ -17,7 +17,6 @@ class About extends React.Component {
     } else {
       axios.post(getUserUrl, { 'token': AppState.token }).then(resp => {
         this.setState({ user: resp.data });
-        console.log(resp.data);
       })
     }
   }
@@ -29,7 +28,15 @@ class About extends React.Component {
       return <Text>
         <p>Логин {this.state.user.login}</p>
         <p>Id {this.state.user.id_user}</p>
+        <p>Фамилия {this.state.user.family}</p>
+        <p>Имя {this.state.user.name}</p>
+        <p>Номер телефона {this.state.user.phonenumber}</p>
+        <p>Дата рождения {this.state.user.birthday}</p>
+        <p>Вк {this.state.user.vk}</p>
+        <p>Скайп {this.state.user.skype}</p>
         Фото <Image source={{ uri: this.state.user.img }} style={{ width: 100, height: 100 }} />
+        <Button title="Редактировать профиль" onPress={() => {this.props.navigation.navigate('EditAbout')}}/>
+        <Button title="Изменить фото" onPress={() => {this.props.navigation.navigate('NewPhoto')}} />
       </Text>
     }
   }

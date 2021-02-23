@@ -10,7 +10,6 @@ function Home({ navigation }) {
       <Button title="Контакты" onPress={() => navigation.navigate('Contacts')} />
       <Button title="Регистрация" onPress={() => navigation.navigate('Register')} />
       <Button title="Войти" onPress={() => navigation.navigate('Login')} />
-      <Button title="Список пользователь" onPress={() => navigation.navigate('UserList')} />
     </View>
   );
 }
